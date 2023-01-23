@@ -26,7 +26,7 @@ public class ReinforcementLearning {
     }
 
     /**
-     * initialize a policy such that all actions are equally likely
+     * initializes a policy such that all actions are equally likely
      */
     private Policy initPolicy(int numStates, int numActions) {
         Policy result = new Policy(numStates, numActions);
@@ -57,19 +57,8 @@ public class ReinforcementLearning {
         return value;
     }
 
-    /**
-     * Apply dynamic programming as explained in README to compute the next
-     * iteration of the expected value of state given policy
-     * 
-     * @param state  the state to compute its next expected value
-     * @param mdp    the Markov Decision Process that models the environment
-     * @param policy the current policy of the agent
-     * @param values the expected state values at the previous iteration of the
-     *               algorithm
-     * @return the expected value of state
-     */
+   
     private double computeStateValue(int state, MDP mdp, Policy policy, double[] values) {
-        // TODO Write the definition of this method
 
         // initialize the return value as 0
         double result=0.0;
@@ -146,7 +135,7 @@ public class ReinforcementLearning {
             }
         }
 
-        // did the policy converge?
+       
         if (!policy.equals(newPolicy)) {
             result = newPolicy;
         }
